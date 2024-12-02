@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Панель менеджера - Мини-отель</title>
+    <link rel="stylesheet" href="styles/manager.css">
+</head>
+<body>
+    <header>
+        <h1>Панель управления мини-отелем</h1>
+        <p>Менеджер: Иванов И.И.</p>
+    </header>
+
+    <div class="main-content">
+        <!-- Радио-кнопки для переключения -->
+        <input type="radio" name="tabs" id="tab1" class="tab-radio" checked>
+        <input type="radio" name="tabs" id="tab2" class="tab-radio">
+        <input type="radio" name="tabs" id="tab3" class="tab-radio">
+
+        <!-- Меню с кнопками -->
+        <div class="menu">
+            <label for="tab1" class="tab-label">Сотрудники</label>
+            <label for="tab2" class="tab-label">Заказы</label>
+            <label for="tab3" class="tab-label">Смены</label>
+        </div>
+
+        <!-- Контент вкладок -->
+        <div id="content1" class="tab-content">
+            <h2>Управление сотрудниками</h2>
+            <button onclick="showNewEmployeeForm()">Добавить сотрудника</button>
+            <table>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Должность</th>
+                    <th>Логин</th>
+                    <th>Статус</th>
+                    <th>Действия</th>
+                </tr>
+                <tr>
+                    <td>Иванов Иван Иванович</td>
+                    <td>Менеджер</td>
+                    <td>ivanov</td>
+                    <td>Активен</td>
+                    <td>
+                        <button class="danger-button">Уволить</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Петров Петр Петрович</td>
+                    <td>Сотрудник обслуживания номеров</td>
+                    <td>petrov</td>
+                    <td>Активен</td>
+                    <td>
+                        <button class="danger-button">Уволить</button>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Форма добавления сотрудника -->
+            <div id="new-employee-form" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <h3>Новый сотрудник</h3>
+                    <form>
+                        <div>
+                            <label>ФИО:</label>
+                            <input type="text" required>
+                        </div>
+                        <div>
+                            <label>Должность:</label>
+                            <select required>
+                                <option>Менеджер</option>
+                                <option>Сотрудник предоставления услуг</option>
+                                <option>Сотрудник обслуживания номеров</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Логин:</label>
+                            <input type="text" required>
+                        </div>
+                        <div>
+                            <label>Пароль:</label>
+                            <input type="password" required>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit">Создать</button>
+                            <button type="button" onclick="hideNewEmployeeForm()">Отмена</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="content2" class="tab-content">
+            <h2>Все заказы</h2>
+            <table>
+                <tr>
+                    <th>Номер заказа</th>
+                    <th>Дата и время</th>
+                    <th>Номер комнаты</th>
+                    <th>Услуга</th>
+                    <th>Статус</th>
+                    <th>Сотрудник</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>01.01.2024 09:15</td>
+                    <td>101</td>
+                    <td>Уборка</td>
+                    <td>Готовится</td>
+                    <td>Петров П.П.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="content3" class="tab-content">
+            <h2>Управление сменами</h2>
+            <button onclick="showNewShiftForm()">Создать смену</button>
+            <table>
+                <tr>
+                    <th>Дата</th>
+                    <th>Время</th>
+                    <th>Сотрудники</th>
+                    <th>Действия</th>
+                </tr>
+                <tr>
+                    <td>01.01.2024</td>
+                    <td>09:00 - 21:00</td>
+                    <td>
+                        <ul>
+                            <li>Петров П.П. (Обслуживание номеров)</li>
+                            <li>Сидоров С.С. (Предоставление услуг)</li>
+                        </ul>
+                    </td>
+                    <td><button>Редактировать</button></td>
+                </tr>
+            </table>
+
+            <!-- Форма создания смены -->
+            <div id="new-shift-form" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <h3>Новая смена</h3>
+                    <form>
+                        <div>
+                            <label>Дата:</label>
+                            <input type="date" required>
+                        </div>
+                        <div>
+                            <label>Время начала:</label>
+                            <input type="time" required>
+                        </div>
+                        <div>
+                            <label>Время окончания:</label>
+                            <input type="time" required>
+                        </div>
+                        <div>
+                            <label>Сотрудники:</label>
+                            <select multiple required>
+                                <option>Петров П.П. (Обслуживание номеров)</option>
+                                <option>Сидоров С.С. (Предоставление услуг)</option>
+                            </select>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit">Создать</button>
+                            <button type="button" onclick="hideNewShiftForm()">Отмена</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Мини-отель. Все права защищены.</p>
+    </footer>
+</body>
+</html> 

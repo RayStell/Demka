@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Вход в систему - Мини-отель</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать в мини-отель</h1>
+    </header>
+
+    <div class="main-content">
+        <div class="login-form">
+            <h2>Вход в систему</h2>
+            <p>Пожалуйста, введите свои учетные данные для входа.</p>
+            <form action="/login" method="post">
+                <div>
+                    <label>Логин:</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div>
+                    <label>Пароль:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <div>
+                    <button type="submit">Войти</button>
+                </div>
+            </form>
+            <p><a href="#">Забыли пароль?</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Мини-отель. Все права защищены.</p>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Обслуживание номеров - Мини-отель</title>
+    <link rel="stylesheet" href="styles/room_service.css">
+</head>
+<body>
+    <header>
+        <h1>Обслуживание номеров</h1>
+        <p>Сотрудник: Петров П.П. | Смена: 09:00 - 21:00</p>
+    </header>
+
+    <div class="main-content">
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Всего заказов</h3>
+                <p>12</p>
+            </div>
+            <div class="stat-card">
+                <h3>Принято</h3>
+                <p>5</p>
+            </div>
+            <div class="stat-card">
+                <h3>Оплачено</h3>
+                <p>7</p>
+            </div>
+        </div>
+        
+        <button onclick="showNewOrderForm()">Создать новый заказ</button>
+        
+        <div class="orders-list">
+            <h2>Заказы текущей смены</h2>
+            <table>
+                <tr>
+                    <th>Номер заказа</th>
+                    <th>Время</th>
+                    <th>Номер комнаты</th>
+                    <th>Кол-во клиентов</th>
+                    <th>Услуги</th>
+                    <th>Статус</th>
+                    <th>Действия</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>09:15</td>
+                    <td>101</td>
+                    <td>2</td>
+                    <td>Уборка, Завтрак</td>
+                    <td>Принят</td>
+                    <td>
+                        <button class="status-button">Оплачен</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>10:30</td>
+                    <td>204</td>
+                    <td>3</td>
+                    <td>Прачечная</td>
+                    <td>Оплачен</td>
+                    <td>
+                        <button class="status-button" disabled>Завершен</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="new-order-form" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Новый заказ</h3>
+                <form>
+                    <div>
+                        <label>Номер комнаты:</label>
+                        <input type="number" required min="100" max="999">
+                    </div>
+                    <div>
+                        <label>Количество клиентов:</label>
+                        <input type="number" required min="1">
+                    </div>
+                    <div>
+                        <label>Услуги:</label>
+                        <select multiple required>
+                            <option>Уборка</option>
+                            <option>Завтрак</option>
+                            <option>Обед</option>
+                            <option>Ужин</option>
+                            <option>Прачечная</option>
+                            <option>Замена белья</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Комментарий:</label>
+                        <textarea rows="3"></textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit">Создать заказ</button>
+                        <button type="button" onclick="hideNewOrderForm()">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Мини-отель. Все права защищены.</p>
+    </footer>
+</body>
+</html> 

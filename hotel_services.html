@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Услуги отеля - Мини-отель</title>
+    <link rel="stylesheet" href="styles/hotel_services.css">
+</head>
+<body>
+    <header>
+        <h1>Услуги отеля</h1>
+        <p>Сотрудник: Сидоров С.С. | Смена: 09:00 - 21:00</p>
+    </header>
+
+    <div class="main-content">
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Новые заказы</h3>
+                <p>5</p>
+            </div>
+            <div class="stat-card">
+                <h3>Готовится</h3>
+                <p>3</p>
+            </div>
+            <div class="stat-card">
+                <h3>Готово</h3>
+                <p>12</p>
+            </div>
+        </div>
+
+        <div class="orders-list">
+            <h2>Активные заказы</h2>
+            <table>
+                <tr>
+                    <th>Номер заказа</th>
+                    <th>Время</th>
+                    <th>Услуга</th>
+                    <th>Номер комнаты</th>
+                    <th>Приоритет</th>
+                    <th>Статус</th>
+                    <th>Действия</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>09:15</td>
+                    <td>Завтрак</td>
+                    <td>101</td>
+                    <td><span class="priority high">Высокий</span></td>
+                    <td>Новый</td>
+                    <td>
+                        <button class="status-button status-preparing">Готовится</button>
+                        <button class="status-button status-ready">Готово</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>10:30</td>
+                    <td>Уборка</td>
+                    <td>204</td>
+                    <td><span class="priority medium">Средний</span></td>
+                    <td>Готовится</td>
+                    <td>
+                        <button class="status-button status-ready">Готово</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Мини-отель. Все права защищены.</p>
+    </footer>
+</body>
+</html> 
